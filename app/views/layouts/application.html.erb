@@ -37,11 +37,15 @@
 	</nav>	
 
 	<div class="container">
+		<% flash.each do |type, message| %>
+			<div class="alert <%= flash_class type %> alert-dismissible" role="alert" >
+				<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<%= message %>
+			</div>
+		<% end %>
 		<%= yield %>
 	</div>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 
 </body>
 </html>
