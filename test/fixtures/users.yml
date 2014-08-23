@@ -3,3 +3,10 @@ ally:
   last_name: "Arpaio"
   email: "ally@ally.com"
   profile_name: "allyarpaio"
+
+mom:
+  first_name: "Patty"
+  last_name: "Holland"
+  email: "patty@arpaio.com"
+  profile_name: "pattyholland"
+
