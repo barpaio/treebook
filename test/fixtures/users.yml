@@ -10,3 +10,8 @@ mom:
   email: "patty@arpaio.com"
   profile_name: "pattyholland"
 
+brian:
+  first_name: "Brian"
+  last_name: "Arpaio"
+  email: "arpaio@gmail.com"
+  profile_name: "brianarpaio"
