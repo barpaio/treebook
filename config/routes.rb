@@ -9,6 +9,8 @@ devise_scope :user do
   get 'logout', to: 'devise/sessions#destroy', as: :logout
 end
 
+  resources :user_friendships
+
   resources :statuses
   get 'feed', to: 'statuses#index', as: :feed
   root to: 'statuses#index'
