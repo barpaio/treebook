@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
                            }
 
   has_many :statuses
+  has_many :user_friendships
+  has_many :friends, through: :user_friendships
   accepts_nested_attributes_for :statuses
 
   def gravatar_url
