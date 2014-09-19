@@ -3,6 +3,7 @@ class UserFriendshipsController < ApplicationController
 	def new
 		if params[:friend_id]
 			@friend = User.find(params[:friend_id])
+			@user_friendship = UserFriendship.new(friend: @friend)
 		else
 			flash[:error] = "Friend required"
 		end

@@ -24,6 +24,14 @@ class UserFriendshipsControllerTest < ActionController::TestCase
   			get :new, friend_id: users(:ally).id 
   			assert_match /#{users(:ally).full_name}/, response.body
   		end
+  		should "assign a new user friendship" do
+  			get :new, friend_id: users(:ally).id
+  			assert assigns(:user_friendship)
+  		end
+  		should "successfully assign a new user friendship" do
+  			get :new, friend_id: users(:ally).id
+  			assert_equal users(:ally), assigns(:user_friendship).friend
+  		end
   	end
   end
 end
