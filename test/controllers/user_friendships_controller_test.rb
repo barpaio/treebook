@@ -21,19 +21,19 @@ class UserFriendshipsControllerTest < ActionController::TestCase
   			assert_equal "Friend required", flash[:error]
   		end
   		should "display the friend's name" do
-  			get :new, friend_id: users(:ally).id 
+  			get :new, friend_id: users(:ally) 
   			assert_match /#{users(:ally).full_name}/, response.body
   		end
   		should "assign a new user friendship" do
-  			get :new, friend_id: users(:ally).id
+  			get :new, friend_id: users(:ally)
   			assert assigns(:user_friendship)
   		end
   		should "successfully assign a new user friendship" do
-  			get :new, friend_id: users(:ally).id
+  			get :new, friend_id: users(:ally)
   			assert_equal users(:ally), assigns(:user_friendship).friend
   		end
       should "successfully assign a new user friendship to the currently logged in user" do
-        get :new, friend_id: users(:ally).id
+        get :new, friend_id: users(:ally)
         assert_equal users(:brian), assigns(:user_friendship).user
       end
       should "return 404 status if friend not found" do
