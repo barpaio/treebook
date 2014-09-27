@@ -32,6 +32,14 @@ class UserFriendshipsControllerTest < ActionController::TestCase
   			get :new, friend_id: users(:ally).id
   			assert_equal users(:ally), assigns(:user_friendship).friend
   		end
+      should "successfully assign a new user friendship to the currently logged in user" do
+        get :new, friend_id: users(:ally).id
+        assert_equal users(:brian), assigns(:user_friendship).user
+      end
+      should "return 404 status if friend not found" do
+        get :new, friend_id: 'invalid'
+        assert_response :not_found
+      end
   	end
   end
 end
