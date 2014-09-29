@@ -4,6 +4,7 @@ ally:
   email: "ally@ally.com"
   profile_name: "allyarpaio"
 
+
 mom:
   first_name: "Patty"
   last_name: "Holland"
@@ -15,3 +16,4 @@ brian:
   last_name: "Arpaio"
   email: "arpaio@gmail.com"
   profile_name: "brianarpaio"
+  encrypted_password: "$2a$10$Fh/Hm8RxDsuPTeBUr6864.GARlcmt7zF2WspaXGr3BIv2C27N.osq"
