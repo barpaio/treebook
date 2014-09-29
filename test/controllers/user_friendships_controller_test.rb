@@ -68,7 +68,7 @@ class UserFriendshipsControllerTest < ActionController::TestCase
   		end
   		context "with valid friend_id" do
   			setup do
-  				post :create, friend_id: users(:ally)
+  				post :create, user_friendship: {friend_id: users(:ally)}
   			end
   			should "assign a friend object" do
   				assert assigns(:friend)
@@ -79,6 +79,10 @@ class UserFriendshipsControllerTest < ActionController::TestCase
   			should "create a friendship" do
   				assert users(:brian).friends.include?(users(:ally))
   			end
+        should "set flash message confirmation" do
+          assert flash[:success]
+          assert_equal "You are now friends with #{users(:ally).full_name}", flash[:success]
+        end
   		end
   	end
   end
